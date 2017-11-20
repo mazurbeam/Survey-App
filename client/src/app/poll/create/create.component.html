@@ -1,0 +1,24 @@
+<a [routerLink]="['/dashboard']">Cancel</a>
+
+<h1>Put the question and options here</h1>
+
+<form #form='ngForm' (submit)='create()'>
+  <p>Question:
+    <input type="text" name='question' required minlength="8" [(ngModel)]='new_poll.question'#pollquestion='ngModel'>
+    <span *ngIf='pollquestion.invalid'>Question must be at least 15 characters</span>
+  </p>
+  <p>Option 1:
+      <input type="text" name='option1' required minlength="3" [(ngModel)]='new_poll.option1'#polloption1='ngModel'>
+  </p>
+  <p>Option 2:
+      <input type="text" name='option2' required minlength="3" [(ngModel)]='new_poll.option2'#polloption1='ngModel'>
+  </p>
+  <p>Option 3:
+      <input type="text" name='option3' required minlength="3" [(ngModel)]='new_poll.option3'#polloption1='ngModel'>
+  </p>
+  <p>Option 4:
+      <input type="text" name='option4' required minlength="3" [(ngModel)]='new_poll.option4'#polloption1='ngModel'>
+  </p>
+<input type='hidden' name = '_user' value='{{user}}' [(ngModel)]='new_poll._user'>
+<input type="submit" value="Create Poll" [disabled]='form.invalid'>
+</form>

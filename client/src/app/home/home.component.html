@@ -1,0 +1,6 @@
+
+<form (submit)="create_user()" #new_user_form="ngForm">
+  <p>Your Name: <input type="text" name='name' [(ngModel)]="user.name" minlength="2" maxlength="10" #user_name="ngModel"></p>
+  <input type="submit" value="Login" [disabled]="!new_user_form.valid">
+
+</form>

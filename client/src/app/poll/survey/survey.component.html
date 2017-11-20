@@ -1,0 +1,30 @@
+<p>{{poll.question}}</p>
+<p>Click the vote button to choose one</p>
+
+<table>
+    <tr>
+      <th>Option</th>
+      <th>Votes</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>{{poll.option1[option]}}</td>
+      <td>{{poll.option1.votes}}</td>
+      
+    </tr>
+    <tr>
+        <td>{{poll.option2.option}}</td>
+        <td>{{poll.option2.votes}}</td>
+        <td><button>></td>
+    </tr>
+    <tr>
+        <td>{{poll.option3.option}}</td>
+        <td>{{poll.option3.votes}}</td>
+        <td><a [routerLink]="['vote', poll.option3._id']">Vote</a></td>
+    </tr>
+    <tr>
+        <td>{{poll.option4.option}}</td>
+        <td>{{poll.option4.votes}}</td>
+        <td><a [routerLink]="['vote', poll.option4._id']">Vote</a></td>
+    </tr>
+</table>
